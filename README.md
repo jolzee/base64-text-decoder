@@ -20,11 +20,11 @@ import decoder from "base64-text-decoder";
 
 Install via [yarn](https://github.com/yarnpkg/yarn)
 
-    yarn add base64-text-decoder (--dev)
+    yarn add base64-text-decoder
 
 or npm
 
-    npm install base64-text-decoder (--save-dev)
+    npm install base64-text-decoder
 
 ### example
 
