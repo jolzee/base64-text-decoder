@@ -26,19 +26,34 @@ or npm
 
     npm install base64-text-decoder (--save-dev)
 
-### configuration
-
-You can pass in extra options as a configuration object (➕ required, ➖ optional, ✏️ default).
+### example
 
 ```js
 import decoder from "base64-text-decoder";
-```
 
-➖ **property** ( type ) `✏️ default`
-<br/> 📝 description
-<br/> ❗️ warning
-<br/> ℹ️ info
-<br/> 💡 example
+let partialEncoded = {
+  email: "myemail@email.com",
+  emailBase64: "bXllbWFpbEBlbWFpbC5jb20=",
+  passwordBase64: "bXlwYXNzd29yZA==",
+  anotherNested: {
+    passwordBase64: "bXlwYXNzd29yZA==",
+  },
+});
+let arrayWithEncodedElements = [
+    "Peter",
+    "bXlwYXNzd29yZA==",
+    partialEncoded,
+    ["bXlwYXNzd29yZA=="],
+  ]
+let decodedTextResult = decoder.getText(partialEncoded);
+let decodedFromStringResult = decoder.getText(JSON.stringify(partialEncoded));
+let simpleStringResult = decoder.getText("bXlwYXNzd29yZA==");
+let arrayTextResult = decoder.getText(arrayWithEncodedElements);
+let searchTextResult = decoder.getSearchText(
+  "?secret=bXlwYXNzd29yZA==&email=myemail%40email.com"
+);
+
+```
 
 ### methods
 
@@ -48,12 +63,6 @@ getText(); // accepts String, Array, Object
 
 ```js
 getSearchText(); // accepts a URL search string ?secret=bXlwYXNzd29yZA==&email=myemail%40email.com
-```
-
-#### #name
-
-```js
-decoder;
 ```
 
 ### Examples

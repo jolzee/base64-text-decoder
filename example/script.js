@@ -20,6 +20,8 @@ console.log(
     "Peter",
     "bXlwYXNzd29yZA==",
     "IlBsZWFzZSBjYWxsIG1lLiBNeSBwaG9uZSBudW1iZXIgaXMgKDU1NSkgMjUzLTAwMDAuIgoKTW9yZSBleGFtcGxlczoKICAgIEVtYWlsIGFkZHJlc3M6IGZvb0BleGFtcGxlLmNvbQogICAgQ3JlZGl0IGNhcmQgbnVtYmVyOiA0MDEyLTg4ODgtODg4OC0xODgxCiAgICBOYXRpb25hbCBQcm92aWRlciBJZGVudGlmaWVyOiAxMjQ1MzE5NTk5CiAgICBEcml2ZXIncyBsaWNlbnNlOiBBQzMzMzk5MQogICAgTXkgU1NOIGlzOiAwNzgtMDUtMTEyMAogICAgRGF2aWQgQWRhbXMgQCBodHRwczovL215c2l0ZS5jb20KICAgIHBhc3N3b3JkOiAxMjM0NTY3",
+    data,
+    ["bXlwYXNzd29yZA=="],
   ])
 ); // Array containing base 64
 console.log(decoder.getText(JSON.parse(data))); // Object
