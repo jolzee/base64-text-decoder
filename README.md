@@ -38,13 +38,13 @@ let partialEncoded = {
   anotherNested: {
     passwordBase64: "bXlwYXNzd29yZA==",
   },
-});
+};
 let arrayWithEncodedElements = [
-    "Peter",
-    "bXlwYXNzd29yZA==",
-    partialEncoded,
-    ["bXlwYXNzd29yZA=="],
-  ]
+  "Peter",
+  "bXlwYXNzd29yZA==",
+  partialEncoded,
+  ["bXlwYXNzd29yZA=="],
+];
 let decodedTextResult = decoder.getText(partialEncoded);
 let decodedFromStringResult = decoder.getText(JSON.stringify(partialEncoded));
 let simpleStringResult = decoder.getText("bXlwYXNzd29yZA==");
@@ -53,6 +53,11 @@ let searchTextResult = decoder.getSearchText(
   "?secret=bXlwYXNzd29yZA==&email=myemail%40email.com"
 );
 
+console.log(`Decoded Text Result`, decodedTextResult);
+console.log(`Decoded Stringified Object`, decodedFromStringResult);
+console.log(`Decoded Simple String`, simpleStringResult);
+console.log(`Decoded Array`, arrayTextResult);
+console.log(`Decoded URL search`, searchTextResult);
 ```
 
 ### methods
