@@ -22,7 +22,7 @@ const _getText = (something) => {
       let somethingParsed = JSON.parse(something);
       return processObject(somethingParsed);
     } catch (e) {
-      console.error(`Could not JSON parse:`, something);
+      // console.error(`Could not JSON parse:`, something);
       return something;
     }
   } else {
@@ -66,10 +66,14 @@ const decodeURLParams = (search) => {
 };
 
 const getText = (something) => {
-  if (!something) return something;
-  let textResult = _getText(something);
-  // console.log(`Processed:`, something, textResult);
-  return textResult;
+  try {
+    if (!something) return something;
+    let textResult = _getText(something);
+    // console.log(`Processed:`, something, textResult);
+    return textResult;
+  } catch (error) {
+    return something;
+  }
 };
 
 const getSearchText = (search) => {
