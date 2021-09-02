@@ -1,6 +1,6 @@
 {
   "name": "base64-text-decoder",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Decodes any Base64 encoded strings in Strings, Arrays, Objects and URL search params.",
   "main": "dist/cjs/index.js",
   "browser": "dist/umd/requestTextExtractor.js",
